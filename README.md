@@ -1,24 +1,15 @@
-# README
+# i.nvest
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+i.nvest is designed for investors to create and share their custom trading portfolios. Signup through the site or using your Google account to begin creating your own portfolios or to view other portolios.
 
-Things you may want to cover:
+## Contributing
 
-* Ruby version
+Bug reports and pull requests are welcome on GitHub at https://github.com/yutingcxiang/progress_tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* System dependencies
+## License
 
-* Configuration
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-* Database creation
+## Code of Conduct
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Everyone interacting in the UniversityCliApp project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/university_cli_app/blob/master/CODE_OF_CONDUCT.md).
