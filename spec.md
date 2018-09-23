@@ -18,7 +18,7 @@ Specs:
 - [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
       User Validations: uniqueness and presence of email and username
       Portfolio Validations: uniqueness of name, presence of strategy and name
-      Fund Validations: numericality of quantity and cost
+      Fund Validations: uniqueness of symbol, numericality of quantity and cost
 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 
