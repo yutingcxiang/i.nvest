@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    #generate form
+    #create form
   end
 
   def show

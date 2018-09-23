@@ -8,6 +8,7 @@ class FundsController < ApplicationController
   end
 
   def create
+    #create form
   end
 
   def show
