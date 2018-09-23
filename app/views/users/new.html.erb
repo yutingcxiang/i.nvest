@@ -1,6 +1,6 @@
 <h1>Sign Up:</h1>
 
-<%= form_tag(new_user_path) do %>
+<%= form_tag('/users', method: :post) do %>
   <%= label_tag :email, 'Your Email:' %>
   <%= email_field_tag("user", "email") %><br>
 
