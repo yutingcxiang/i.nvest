@@ -8,7 +8,7 @@ class FundsController < ApplicationController
   end
 
   def create
-    #create form
+    @fund = Fund.create(fund_params)
   end
 
   def show

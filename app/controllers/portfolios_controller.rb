@@ -4,7 +4,12 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    #create form
+    @portfolio = Portfolio.new(portfolio_params)
+    if @portfolio.save
+      redirect_to portfolio_path(@portfolio)
+    else
+      redirect_to portfolios_path
+    end
   end
 
   def show
@@ -16,7 +21,9 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-    #create form
+    @portfolio = Portfolio.find_by(id: params[:id])
+    @portfolio.update(portfolio_params)
+    redirect_to portfolio_path(@portfolio)
   end
 
   def destroy
