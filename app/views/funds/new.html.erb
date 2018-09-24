@@ -1,0 +1,18 @@
+<h1>Add a Fund:</h1>
+
+<%=form_for @fund do |f|%>
+
+  <%=f.label :symbol, "Symbol:" %>
+  <%=f.text_field :sybmol %>
+
+  <%=f.label :type, "Type:"%>
+  <%=f.text_field :type %>
+
+  <%=f.label :quantity, "Quantity:"%>
+  <%=f.text_field :quantity %>
+
+  <%=f.label :price, "Share Price:"%>
+  <%=f.text_field :price %>
+
+  <%=f.submit %><br>
+<%end%>
