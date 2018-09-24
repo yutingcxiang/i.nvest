@@ -1,4 +1,8 @@
 class PortfoliosController < ApplicationController
+  def index
+    @portfolios = Portfolio.all
+  end
+
   def new
     @portfolio = Portfolio.new
   end
@@ -8,7 +12,7 @@ class PortfoliosController < ApplicationController
     if @portfolio.save
       redirect_to portfolio_path(@portfolio)
     else
-      redirect_to portfolios_path
+      redirect_to new_portfolio_path
     end
   end
 
