@@ -4,5 +4,6 @@
 <% @users.each do |user| %>
   <p><%= user.username %></p>
   <%= link_to "See Profile", user_path(user) %>
+  <br>
 <% end %>
 </div>
