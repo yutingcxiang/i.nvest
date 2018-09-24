@@ -1,0 +1,16 @@
+<h1>Portfolio Name: <%= @portfolio.name %></h1>
+<h2>Created By: <%= @portfolio.user.username %></h2>
+<br>
+<p>Strategy: <%= @portfolio.strategy %></p>
+
+<div>
+  <h4>Portfolio Funds:</h4>
+  <% @portfolio.funds.each do |fund| %>
+    <%= fund.symbol %>
+    <%= fund.quantity %>
+    <%= fund.price %>
+    <%= fund.type %>
+  <% end %>
+
+<%= link_to 'User Profile', user_path(@portfolio.user) %>
+<%= link_to 'All Portfolios', portfolios_path %>

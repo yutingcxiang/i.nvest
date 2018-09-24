@@ -1,0 +1,10 @@
+<h1>All Portfolios:</h1>
+
+<div>
+<% @portfolios.each do |portfolio| %>
+  <p><%= portfolio.name %></p>
+  <p><%= portfolio.strategy %></p>
+  <p><%= link_to "See Profile", user_path(user) %><p>
+  <br>
+<% end %>
+</div>
