@@ -1,3 +1,9 @@
 <h1>User: <%= @user.username %></h1>
 
+<p>Portfolios:</p>
+<% @user.portfolios.each do |portfolio| %>
+  <p><%= link_to "#{portfolio.name}", user_portfolio_path(@user, portfolio) %></p>
+<% end %>
+
+<br>
 <%= link_to "Create New Portfolio", new_user_portfolio_path(@user) %><br>

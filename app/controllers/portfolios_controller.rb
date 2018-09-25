@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   end
 
   def new
-    @portfolio = Portfolio.new
+    @portfolio = Portfolio.new(user_id: params[:user_id])
   end
 
   def create
@@ -40,6 +40,6 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:name, :strategy)
+    params.require(:portfolio).permit(:name, :strategy, :user_id)
   end
 end

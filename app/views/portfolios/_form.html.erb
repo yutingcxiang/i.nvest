@@ -1,4 +1,6 @@
 <%=form_for @portfolio do |f|%>
+  <%= f.hidden_field :user_id %>
+
   <%=f.label :name, "Portfolio Name:" %><br>
   <%=f.text_field :name %><br>
 
