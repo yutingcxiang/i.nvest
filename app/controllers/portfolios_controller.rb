@@ -40,6 +40,12 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:name, :strategy)
+    params.require(:portfolio).permit(
+      :name,
+      :strategy,
+      funds_attributes: [
+        :symbol, :type
+        ]
+      )
   end
 end
