@@ -1,9 +1,12 @@
 <h1>User: <%= @user.username %></h1>
 
 <h3>Portfolios:</h3>
-<% @user.portfolios.each do |portfolio| %>
-  <p>Name: <%= portfolio.name %></p>
-  <p>Strategy: <%= portfolio.strategy %></p>
+
+<% if !@user.portfolios.empty? %>
+  <% @user.portfolios.each do |portfolio| %>
+    <p>Name: <%= portfolio.name %></p>
+    <p>Strategy: <%= portfolio.strategy %></p>
+  <% end %>
 <% end %>
 
 <br>

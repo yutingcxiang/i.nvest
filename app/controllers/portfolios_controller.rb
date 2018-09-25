@@ -8,8 +8,8 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio = current_user.portfolios.new(portfolio_params)
-    raise params.inspect
+    @portfolio = Portfolio.new(portfolio_params)
+    @portfolio.user = current_user
     if @portfolio.save
       redirect_to portfolio_path(@portfolio)
     else

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :portfolios
-  has_many :funds, through: :portfolios
+  has_many :funds
+  has_many :portfolios, through: :funds
 
   validates :username, presence: true
   validates :username, uniqueness: true

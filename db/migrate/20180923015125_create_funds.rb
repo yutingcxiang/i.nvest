@@ -5,8 +5,6 @@ class CreateFunds < ActiveRecord::Migration[5.2]
       t.integer :quantity
       t.decimal :price
       t.string :type
-      t.integer :user_id
-      t.integer :portfolio_id
       t.timestamps
     end
   end
