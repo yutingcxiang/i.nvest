@@ -7,5 +7,19 @@
   <%=f.label :strategy, "Portfolio Strategy:"%><br>
   <%=f.text_field :strategy %><br>
 
+  <%= fields_for :funds, @user.funds.build do |fund_fields| %>
+    <%=fund_fields.label :symbol, "Symbol:" %>
+    <%=fund_fields.text_field :symbol %>
+
+    <%=fund_fields.label :type, "Type:"%>
+    <%=fund_fields.text_field :type %>
+
+    <%=fund_fields.label :quantity, "Quantity:"%>
+    <%=fund_fields.text_field :quantity %>
+
+    <%=fund_fields.label :price, "Share Price:"%>
+    <%=fund_fields.text_field :price %>
+  <%= end %>
+
   <%=f.submit %><br>
  <%end%>

@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 2018_09_23_015125) do
 
   create_table "funds", force: :cascade do |t|
     t.string "symbol"
-    t.integer "quantity"
-    t.decimal "price"
     t.string "type"
+    t.integer "user_id"
+    t.integer "portfolio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2018_09_23_015125) do
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
     t.string "strategy"
-    t.integer "user_id"
-    t.integer "fund_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
