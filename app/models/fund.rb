@@ -1,6 +1,6 @@
 class Fund < ApplicationRecord
   has_many :portfolios
-  has_many :users, through: portfolios
+  has_many :users, through: :portfolios
 
   validates :symbol, presence: true
   validates :symbol, uniqueness: true

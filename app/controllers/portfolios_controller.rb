@@ -11,9 +11,9 @@ class PortfoliosController < ApplicationController
     @portfolio = Portfolio.new(portfolio_params)
     @portfolio.user = current_user
     if @portfolio.save
-      redirect_to portfolio_path(@portfolio)
+      redirect_to user_portfolios_path(@portfolio)
     else
-      redirect_to new_portfolio_path
+      redirect_to new_user_portfolio_path
     end
   end
 
@@ -28,7 +28,7 @@ class PortfoliosController < ApplicationController
   def update
     @portfolio = Portfolio.find_by(id: params[:id])
     @portfolio.update(portfolio_params)
-    redirect_to portfolio_path(@portfolio)
+    redirect_to user_portfolios_path(@portfolio)
   end
 
   def destroy
