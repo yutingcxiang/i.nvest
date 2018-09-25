@@ -8,7 +8,8 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio = Portfolio.new(portfolio_params)
+    @portfolio = current_user.portfolios.new(portfolio_params)
+    raise params.inspect
     if @portfolio.save
       redirect_to portfolio_path(@portfolio)
     else
@@ -39,6 +40,6 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-    params.require(:portfolio).permit(:name, :strategy, :email)
+    params.require(:portfolio).permit(:name, :strategy)
   end
 end
