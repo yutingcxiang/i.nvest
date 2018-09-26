@@ -1,5 +1,5 @@
-class Portfolio < ApplicationRecord
-  belongs_to :fund, inverse_of: :funds
+class Asset < ApplicationRecord
+  belongs_to :fund, inverse_of: :portfolios
   belongs_to :user
 
   validates :name, presence: true

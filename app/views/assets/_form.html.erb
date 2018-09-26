@@ -1,0 +1,11 @@
+<%=form_for asset, url: {action: "create"} do |f|%>
+  <%= f.hidden_field :user_id %>
+
+  <%=f.label :name, "Asset Name:" %><br>
+  <%=f.text_field :name %><br>
+
+  <%=f.label :strategy, "Asset Strategy:"%><br>
+  <%=f.text_field :strategy %><br>
+
+  <%=f.submit %><br>
+ <%end%>
