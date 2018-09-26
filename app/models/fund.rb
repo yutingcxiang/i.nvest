@@ -6,7 +6,7 @@ class Fund < ApplicationRecord
   validates :industry, presence: true
   validates :strategy, presence: true
 
-  accepts_nested_attributes_for :investments
+  accepts_nested_attributes_for :investments, reject_if: :all_blank
 
   def investments_attributes=(investments_attributes)
    investments_attributes.values.each do |investment_attribute|

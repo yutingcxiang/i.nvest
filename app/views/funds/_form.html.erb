@@ -1,0 +1,25 @@
+<%=form_for([user, fund]) do |f|%>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+
+  <%=f.label :name, "Name:" %>
+  <%=f.text_field :name %><br>
+
+  <%=f.label :industry, "Industry:"%>
+  <%=f.text_field :industry %><br>
+
+  <%=f.label :strategy, "Strategy:"%>
+  <%=f.text_area :strategy %><br>
+
+  <h3>Select From Existing Investments:</h3>
+
+  <%= f.collection_check_boxes :investment_ids, Investment.all, :id, :symbol %><br>
+
+  <h3>Or Add Your Own Investment:</h3>
+
+  <%= f.fields_for :investments, user.investments.create do |investments_field| %>
+    <%= investments_field.label :symbol, "Symbol:" %>
+    <%= investments_field.text_field :symbol %><br>
+  <% end %><br>
+
+  <%=f.submit %><br>
+<%end%>

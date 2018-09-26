@@ -3,7 +3,6 @@
 <div>
 <% @funds.each do |fund| %>
   <p>Name:<%= fund.name %></p>
-  <p>Created by:<%= fund.users.first %></p>
   <p>Industry:<%= fund.industry %></p>
   <p>Strategy:<%= fund.strategy %></p><br><br>
 <% end %>

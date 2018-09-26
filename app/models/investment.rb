@@ -1,4 +1,4 @@
 class Investment < ApplicationRecord
   belongs_to :fund, inverse_of: :investments
-  belongs_to :user
+  belongs_to :user, optional: true
 end
