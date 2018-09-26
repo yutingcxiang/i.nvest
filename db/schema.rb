@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_033047) do
-
-  create_table "assets", force: :cascade do |t|
-    t.string "symbol"
-    t.integer "user_id"
-    t.integer "fund_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2018_09_26_075440) do
 
   create_table "funds", force: :cascade do |t|
     t.string "name"
     t.string "industry"
     t.string "strategy"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "investments", force: :cascade do |t|
+    t.string "symbol"
+    t.integer "user_id"
+    t.integer "fund_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

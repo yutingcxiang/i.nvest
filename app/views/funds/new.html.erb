@@ -12,15 +12,15 @@
   <%=f.text_area :strategy %><br>
 
   <h3>Add Your First Asset:</h3>
-  <%=f.fields_for :new_asset, @fund.assets.build do |asset_field|%>
+  <%=f.fields_for :new_investment, @fund.investments.build do |asset_field|%>
     <%=asset_field.label :symbol, "Asset Symbol:"%>
     <%=asset_field.text_field :symbol %><br>
   <%end%>
 
   <h3>Or Select An Existing Asset:</h3>
 
-  <%=f.label :assets, "Select Asset:"%>
-  <%=f.collection_select :assets, Asset.all, :symbol, :symbol, include_blank: true%><br><br>
+  <%=f.label :investments, "Select Asset:"%>
+  <%=f.collection_select :investments, Asset.all, :symbol, :symbol, include_blank: true%><br><br>
 
   <%=f.submit %><br>
 <%end%>

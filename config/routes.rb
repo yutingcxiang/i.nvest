@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :funds
   end
 
-  resources :assets
+  resources :investments, only: [:index, :new, :create, :show, :delete]
 end
