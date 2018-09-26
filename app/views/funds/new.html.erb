@@ -11,16 +11,16 @@
   <%=f.label :strategy, "Strategy:"%>
   <%=f.text_area :strategy %><br>
 
-  <h3>Add Your First Asset:</h3>
-  <%=f.fields_for :new_investment, @fund.investments.build do |asset_field|%>
-    <%=asset_field.label :symbol, "Asset Symbol:"%>
-    <%=asset_field.text_field :symbol %><br>
+  <h3>Add Your First Investment:</h3>
+  <%=f.fields_for :new_investment, @fund.investments.build do |investment_field|%>
+    <%=investment_field.label :symbol, "Symbol:"%>
+    <%=investment_field.text_field :symbol %><br>
   <%end%>
 
-  <h3>Or Select An Existing Asset:</h3>
+  <h3>Or Select An Existing investment:</h3>
 
-  <%=f.label :investments, "Select Asset:"%>
-  <%=f.collection_select :investments, Asset.all, :symbol, :symbol, include_blank: true%><br><br>
+  <%=f.label :investments, "Select investment:"%>
+  <%=f.collection_select :investments, Investment.all, :symbol, :symbol, include_blank: true%><br><br>
 
   <%=f.submit %><br>
 <%end%>

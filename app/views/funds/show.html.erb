@@ -1,4 +1,12 @@
-<h1>Fund: <%= @fund.symbol %></h1>
-<h2>Type: <%= @fund.type %></h2>
+<h1>Fund:<%= @fund.name %></h1>
+<h3>Industry:<%= fund.industry %></h3>
+<h3>Strategy:<%= fund.strategy %></h3><br><br>
+
+<h4>Investments:</h4>
+<ul>
+<% @fund.investments.each do |investment| %>
+  <li><%= @fund.symbol %></li>
+<% end %>
+</ul>
 
 <%= link_to 'All Funds', funds_path %>

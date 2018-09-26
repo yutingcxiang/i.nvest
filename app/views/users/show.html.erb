@@ -1,11 +1,20 @@
-<h1>User: <%= @user.username %></h1>
+<h1><%= @user.username %></h1>
 
-<h3>Portfolios:</h3>
+<h3>Investments:</h3>
+<div>
+<% @user.investments.each do |investment| %>
+  <p>Symbol:<%= investment.symbol%></p><br>
+  <% end %>
+</div>
 
 <h3>Funds:</h3>
-
+<div>
+  <% @user.funds.each do |fund| %>
+    <p>Name:<%= fund.name%></p><br>
+    <p>Industry:<%= fund.industry%></p><br>
+    <p>Strategy:<%= fund.strategy%></p><br>
+    <% end %>
+</div>
 
 <br>
 <%= link_to "New Fund", new_user_fund_path(@user) %><br>
-<br>
-<%= link_to "See All Assets", assets_path %></p>
