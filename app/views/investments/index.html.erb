@@ -1,10 +1,9 @@
 <h1>All investments:</h1>
 
-<div>
+<ul>
 <% @investments.each do |investment| %>
-  <p><%= investment.name %></p>
-  <br>
+  <li><%= investment.symbol %></li>
 <% end %>
-</div>
+</ul>
 
 <br>

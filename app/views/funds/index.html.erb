@@ -2,7 +2,8 @@
 
 <div>
 <% @funds.each do |fund| %>
-  <p><%= link_to "#{fund.name}", user_fund_path(fund.user.first, fund) %></p>
+  <p>Name:<%= fund.name %></p>
+  <p>Created by:<%= fund.users.first %></p>
   <p>Industry:<%= fund.industry %></p>
   <p>Strategy:<%= fund.strategy %></p><br><br>
 <% end %>
