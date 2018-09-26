@@ -1,18 +1,17 @@
 <h1><%= @user.username %></h1>
 
-<h3>Investments:</h3>
-<div>
-<% @user.investments.each do |investment| %>
-  <p>Symbol:<%= investment.symbol%></p><br>
-  <% end %>
-</div>
-
 <h3>Funds:</h3>
 <div>
   <% @user.funds.each do |fund| %>
     <p>Name:<%= fund.name%></p>
     <p>Industry:<%= fund.industry%></p>
-    <p>Strategy:<%= fund.strategy%></p><br>
+    <p>Strategy:<%= fund.strategy%></p>
+      <ul>
+      <% fund.investments.each do |investment| %>
+        <li><%= investment.symbol %></li>
+      <% end %>
+      </ul>
+      <br>
     <% end %>
 </div>
 

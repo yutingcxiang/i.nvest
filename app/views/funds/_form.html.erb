@@ -1,5 +1,5 @@
 <%=form_for([user, fund]) do |f|%>
-  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%=f.hidden_field :user_id, :value => @user.id %>
 
   <%=f.label :name, "Name:" %>
   <%=f.text_field :name %><br>
@@ -16,9 +16,10 @@
 
   <h3>Or Add Your Own Investment:</h3>
 
-  <%= f.fields_for :investments, user.investments.create do |investments_field| %>
-    <%= investments_field.label :symbol, "Symbol:" %>
-    <%= investments_field.text_field :symbol %><br>
+  <%= f.fields_for :new_investment do |investment_fields| %>
+    <%= investment_fields.label :symbol, "Symbol:" %>
+    <%= investment_fields.text_field :symbol %><br>
+    <%= investment_fields.hidden_field :user_id, :value => @user.id %>
   <% end %><br>
 
   <%=f.submit %><br>

@@ -4,21 +4,15 @@ class FundsController < ApplicationController
   end
 
   def new
-    @fund = Fund.new
     @user = User.find(params[:user_id])
+    @fund = @user.funds.build
   end
 
   def create
     @user = User.find(params[:user_id])
-    @fund = Fund.create(fund_params)
-    @user.investments.create(:fund_id => @fund.id )
-
+    @fund = @user.funds.create(fund_params)
     raise params.inspect
-      if @fund.save
-        redirect_to user_funds_path(@user)
-      else
-        redirect_to new_user_fund_path
-      end
+    redirect_to user_path(@user)
   end
 
   def show
@@ -33,6 +27,6 @@ class FundsController < ApplicationController
 
   def fund_params
     params.require(:fund).permit(:name, :industry, :strategy,
-      investment_ids:[], investments_attributes: [:symbol])
+      investment_ids:[], new_investment: [:symbol, :user_id])
   end
 end

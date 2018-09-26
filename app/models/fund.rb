@@ -1,17 +1,18 @@
 class Fund < ApplicationRecord
-  has_many :investments, inverse_of: :fund
+  has_many :investments
   has_many :users, through: :investments
 
   validates :name, presence: true
   validates :industry, presence: true
   validates :strategy, presence: true
 
-  accepts_nested_attributes_for :investments, reject_if: :all_blank
+  accepts_nested_attributes_for :investments
 
-  def investments_attributes=(investments_attributes)
-   investments_attributes.values.each do |investment_attribute|
-     investment = Investment.find_or_create_by(investment_attribute)
+  def new_investment=(new_investment)
+   if !new_investment[:symbol].empty? || !new_investment[:symbol].nil?
+     investment = Investment.find_or_create_by(new_investment)
      self.investments << investment
    end
  end
+
 end
