@@ -3,6 +3,10 @@ class InvestmentsController < ApplicationController
     @investments = Investment.all
   end
 
+  def new
+    @investment = Investment.new
+  end
+
   def create
     @investment = Investment.create(investment_params)
     redirect_to investments_path
@@ -21,6 +25,6 @@ class InvestmentsController < ApplicationController
   private
 
   def investment_params
-    params.require(:investment).permit(:symbol)
+    params.require(:investment).permit(:symbol, :user_id, :fund_id)
   end
 end

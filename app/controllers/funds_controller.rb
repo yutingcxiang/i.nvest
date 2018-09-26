@@ -4,13 +4,14 @@ class FundsController < ApplicationController
   end
 
   def new
+    @fund = Fund.new
     @user = User.find(params[:user_id])
-    @fund = @user.funds.build
   end
 
   def create
+    @fund = Fund.new(fund_params)
     @user = User.find(params[:user_id])
-    @fund = @user.funds.build(fund_params)
+    raise params.inspect
       if @fund.save
         redirect_to user_funds_path(@user)
       else

@@ -19,8 +19,6 @@
 
   <%= f.fields_for :investments, @fund.investments.build do |investments_field| %>
     <%= investments_field.text_field :symbol %>
-    <%= investments_field.hidden_field :user_id, :value => @user.id %>
-    <%= investments_field.hidden_field :fund_id, :value => @fund.id %>
   <% end %><br>
 
   <%=f.submit %><br>
