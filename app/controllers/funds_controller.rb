@@ -8,8 +8,7 @@ class FundsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @fund = User.funds.build(fund_params)
+    @fund = @user.funds.build(fund_params)
       if @user.id == current_user.id && @fund.save
         redirect_to user_funds_path(@user)
       else
@@ -28,6 +27,7 @@ class FundsController < ApplicationController
   private
 
   def fund_params
-    params.require(:fund).permit(:name, :industry, :strategy)
+    params.require(:fund).permit(:name, :industry, :strategy,
+      funds_attributes: [:symbol, :company])
   end
 end

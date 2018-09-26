@@ -1,6 +1,7 @@
 <h1>Add a Fund:</h1>
 
-<%=form_for([@user, @user.funds.build]) do |f|%>
+<%=form_for([user, fund]) do |f|%>
+  <%= f.hidden_field :user_id %>
 
   <%=f.label :name, "Symbol:" %>
   <%=f.text_field :name %><br>
@@ -11,9 +12,10 @@
   <%=f.label :strategy, "Strategy:"%>
   <%=f.text_area :strategy %><br>
 
-  <%=f.fields_for :asset, fund.build_asset do |asset_field|%>
-    <%=cat_field.label :name, "Add Your First Asset:"%>
-    <%=cat_field.text_field :name%><br>
+  <%=f.fields_for :assets, fund.assets.build do |asset_field|%>
+    <%=asset_field.label :symbol, "Add Your First Asset:"%>
+    <%=f.label :strategy, "Strategy:"%>
+    <%=asset_field.text_field :symbol%><br>
   <%end%>
 
   <%=f.label :asset, "Or Select An Existing Asset:"%>

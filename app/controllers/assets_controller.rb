@@ -1,7 +1,7 @@
 class AssetsController < ApplicationController
   def index
     @assets = Asset.all
-    @asset.user = current_user
+    @user = current_user
   end
 
   def new

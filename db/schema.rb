@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_23_015125) do
+ActiveRecord::Schema.define(version: 2018_09_26_033047) do
 
   create_table "assets", force: :cascade do |t|
     t.string "symbol"
-    t.string "company"
     t.integer "user_id"
     t.integer "fund_id"
     t.datetime "created_at", null: false
