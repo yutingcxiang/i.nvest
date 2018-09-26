@@ -1,6 +1,6 @@
 <h1>Add a Fund:</h1>
 
-<%=form_for([user, fund]) do |f|%>
+<%=form_for([@user, @user.funds.build]) do |f|%>
 
   <%=f.label :name, "Symbol:" %>
   <%=f.text_field :name %><br>

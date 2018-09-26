@@ -8,11 +8,21 @@ class FundsController < ApplicationController
   end
 
   def create
-    @fund = Fund.create(fund_params)
+    @user = User.find(params[:user_id])
+    @fund = User.funds.build(fund_params)
+      if @user.id == current_user.id && @fund.save
+        redirect_to user_funds_path(@user)
+      else
+        redirect_to new_user_fund_path
+      end
   end
 
   def show
-    @fund = Fund.find_by(id: params[:id])
+    if params[:user_id]
+      @funds = User.find(params[:user_id]).funds
+    else
+      @funds = Fund.all
+    end
   end
 
   private
