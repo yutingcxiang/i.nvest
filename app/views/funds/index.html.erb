@@ -2,6 +2,8 @@
 
 <div>
 <% @funds.each do |fund| %>
-  <p><%= fund.symbol %></p>
+  <p>Name:<%= fund.name %></p>
+  <p>Industry:<%= fund.industry %></p>
+  <p>Strategy:<%= fund.strategy %></p><br><br>
 <% end %>
 </div>
