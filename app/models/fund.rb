@@ -5,4 +5,6 @@ class Fund < ApplicationRecord
   validates :name, presence: true
   validates :industry, presence: true
   validates :strategy, presence: true
+
+
 end
