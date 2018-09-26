@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(version: 2018_09_23_015125) do
 
   create_table "funds", force: :cascade do |t|
     t.string "symbol"
-    t.string "category"
     t.string "industry"
-    t.string "description"
+    t.string "strategy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

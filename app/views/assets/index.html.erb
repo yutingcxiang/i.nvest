@@ -1,10 +1,11 @@
-<h1>All Portfolios:</h1>
+<h1>All Assets:</h1>
 
 <div>
-<% @portfolios.each do |portfolio| %>
-  <p><%= portfolio.name %></p>
-  <p><%= portfolio.strategy %></p>
-  <p><%= link_to "See Profile", user_path(user) %><p>
+<% @assets.each do |assets| %>
+  <p><%= asset.name %></p>
   <br>
 <% end %>
 </div>
+
+<br>
+<%= link_to 'My Profile', user_path(@user) %>

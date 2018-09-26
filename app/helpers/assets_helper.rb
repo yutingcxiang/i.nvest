@@ -1,2 +1,2 @@
-module PortfoliosHelper
+module AssetsHelper
 end
