@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :assets
+  resources :funds
   root 'application#home'
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
@@ -8,6 +10,5 @@ Rails.application.routes.draw do
     resources :funds, only: [:index, :new, :create, :show]
   end
 
-  resources :assets
   resources :funds, only: [:index]
 end
