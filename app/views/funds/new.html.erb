@@ -1,9 +1,8 @@
-<h1>Add a Fund:</h1>
+<h1>Create A New Fund:</h1>
 
-<%=form_for([user, fund]) do |f|%>
-  <%= f.hidden_field :user_id %>
+<%=form_for([@user, @fund]) do |f|%>
 
-  <%=f.label :name, "Symbol:" %>
+  <%=f.label :name, "Name:" %>
   <%=f.text_field :name %><br>
 
   <%=f.label :industry, "Industry:"%>
@@ -12,14 +11,16 @@
   <%=f.label :strategy, "Strategy:"%>
   <%=f.text_area :strategy %><br>
 
-  <%=f.fields_for :assets, fund.assets.build do |asset_field|%>
-    <%=asset_field.label :symbol, "Add Your First Asset:"%>
-    <%=f.label :strategy, "Strategy:"%>
+  <h3>Add Your First Asset:</h3>
+  <%=f.fields_for :assets, @fund.assets.build do |asset_field|%>
+    <%=asset_field.label :symbol, "Asset Symbol:"%>
     <%=asset_field.text_field :symbol%><br>
   <%end%>
 
-  <%=f.label :asset, "Or Select An Existing Asset:"%>
-  <%=f.collection_select :asset, Asset.all, :symbol, :symbol, include_blank: true%><br>
+  <h3>Or Select An Existing Asset:</h3>
+
+  <%=f.label :assets, "Select Asset:"%>
+  <%=f.collection_select :assets, Asset.all, :symbol, :symbol, include_blank: true%><br><br>
 
   <%=f.submit %><br>
 <%end%>
