@@ -1,6 +1,7 @@
 class AssetsController < ApplicationController
   def index
     @assets = Asset.all
+    @asset.user = current_user
   end
 
   def new
@@ -40,6 +41,6 @@ class AssetsController < ApplicationController
   private
 
   def asset_params
-    params.require(:asset).permit(:name)
+    params.require(:asset).permit(:symbol, :company)
   end
 end

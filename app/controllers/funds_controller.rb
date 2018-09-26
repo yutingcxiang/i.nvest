@@ -18,6 +18,6 @@ class FundsController < ApplicationController
   private
 
   def fund_params
-    params.require(:fund).permit(:symbol, :industry, :strategy)
+    params.require(:fund).permit(:name, :industry, :strategy)
   end
 end

@@ -1,15 +1,23 @@
 <h1>Add a Fund:</h1>
 
-<%=form_for @fund do |f|%>
+<%=form_for([user, fund]) do |f|%>
 
-  <%=f.label :symbol, "Symbol:" %>
-  <%=f.text_field :symbol %>
+  <%=f.label :name, "Symbol:" %>
+  <%=f.text_field :name %><br>
 
-  <%=f.label :type, "Industry:"%>
-  <%=f.text_field :type %>
+  <%=f.label :industry, "Industry:"%>
+  <%=f.text_field :industry %><br>
 
-  <%=f.label :type, "Strategy:"%>
-  <%=f.text_area :type %>
+  <%=f.label :strategy, "Strategy:"%>
+  <%=f.text_area :strategy %><br>
+
+  <%=f.fields_for :asset, fund.build_asset do |asset_field|%>
+    <%=cat_field.label :name, "Add Your First Asset:"%>
+    <%=cat_field.text_field :name%><br>
+  <%end%>
+
+  <%=f.label :asset, "Or Select An Existing Asset:"%>
+  <%=f.collection_select :asset, Asset.all, :symbol, :symbol, include_blank: true%><br>
 
   <%=f.submit %><br>
 <%end%>
