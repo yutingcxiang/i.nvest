@@ -12,10 +12,6 @@ class InvestmentsController < ApplicationController
     redirect_to investments_path
   end
 
-  def show
-    @investment = Investment.find_by(id: params[:id])
-  end
-
   def destroy
     @investment = Investment.find_by(id: params[:id])
     @investment.destroy

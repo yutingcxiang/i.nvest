@@ -1,4 +1,6 @@
 class FundsController < ApplicationController
+  before_action :require_login
+
   def index
     @funds = Fund.all
   end
