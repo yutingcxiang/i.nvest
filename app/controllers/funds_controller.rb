@@ -13,7 +13,6 @@ class FundsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @fund = @user.funds.create(fund_params)
-    raise params.inspect
     redirect_to user_path(@user)
   end
 
