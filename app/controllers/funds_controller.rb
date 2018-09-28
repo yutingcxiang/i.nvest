@@ -1,5 +1,4 @@
 class FundsController < ApplicationController
-  before_action :require_login
 
   def index
     @funds = Fund.all
@@ -12,8 +11,12 @@ class FundsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @fund = @user.funds.create(fund_params)
-    redirect_to user_path(@user)
+    @fund = @user.funds.build(fund_params)
+    if @fund.save
+      redirect_to user_path(@user)
+    else
+      render 'new'
+    end
   end
 
   def show
