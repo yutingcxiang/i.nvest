@@ -4,13 +4,15 @@ class SessionsController < ApplicationController
 
   def create
     if auth_hash
-      @user = User.find_or_create_by(uid: auth_hash['uid']) do |u|
+      @user = User.find_or_create_by(uid: auth_hash['uid'][0..8]) do |u|
+        u.id = auth_hash['uid'][0..8]
         u.username = unique_username
-        u.email = auth['info']['email']
+        u.name = auth_hash['info']['name']
+        u.email = auth_hash['info']['email']
         u.password = SecureRandom.hex
       end
       session[:user_id] = @user.id
-      redirect_to user_path(@user.id)
+      redirect_to user_path(@user)
     else
       @user = User.find_by(username: params[:username])
       if @user && @user.authenticate(params[:password])
@@ -31,7 +33,7 @@ class SessionsController < ApplicationController
   private
 
   def unique_username
-    username = auth['info']['username'].split("@").first + rand(1...100)
+    auth_hash['info']['email'].split("@").first + rand(1...100).to_s
   end
 
   def auth_hash

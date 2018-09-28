@@ -1,9 +1,9 @@
-<h1>Hello, <%= @user.username %>!</h1>
+<h1>Hello, <%= @user.name %>!</h1>
 
 <h3>Your Funds:</h3>
 <div>
   <% @user.funds.order(created_at: :desc).each do |fund| %>
-    <p>Name: <%= fund.name%></p>
+    <p>Name: <%= fund.fund_name%></p>
     <p>Industry: <%= fund.industry%></p>
     <p>Strategy: <%= fund.strategy%></p>
     <p>Investments:</p>

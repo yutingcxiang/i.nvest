@@ -1,8 +1,8 @@
 <%=form_for([user, fund]) do |f|%>
   <%=f.hidden_field :user_id, :value => @user.id %>
 
-  <%=f.label :name, "Name:" %>
-  <%=f.text_field :name %><br>
+  <%=f.label :fund_name, "Fund Name:" %>
+  <%=f.text_field :fund_name %><br>
 
   <%=f.label :industry, "Industry:"%>
   <%=f.text_field :industry %><br>
