@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
 
   def create
     if auth_hash
-      @user = User.find_or_create_by(uid: auth['uid']) do |u|
-        u.username = auth['info']['name']
+      @user = User.find_or_create_by(uid: auth_hash['uid']) do |u|
+        u.username = unique_username
         u.email = auth['info']['email']
         u.password = SecureRandom.hex
       end
@@ -30,7 +30,11 @@ class SessionsController < ApplicationController
 
   private
 
-  def auth
+  def unique_username
+    username = auth['info']['username'].split("@").first + rand(1...100)
+  end
+
+  def auth_hash
     request.env['omniauth.auth']
   end
 end

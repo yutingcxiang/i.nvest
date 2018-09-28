@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy', as: 'signout'
 
-  get '/auth/google_oauth2/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: redirect('/')
 
   resources :users, only: [:index, :new, :create, :show] do
