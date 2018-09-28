@@ -1,3 +1,18 @@
+<% if @user.errors.any? %>
+  <div id="errors">
+    <h4>
+      <%= pluralize(@user.errors.count, "error") %>
+      Please try again:
+    </h4>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>Sign Up:</h1>
 
 <%= form_for @user do |f|%>

@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      render new_user_path
+      flash[:notice] = "Invalid username or password. Please try again."
+      redirect_to signin_path
     end
   end
 
