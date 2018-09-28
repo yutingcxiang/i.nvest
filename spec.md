@@ -20,7 +20,8 @@ Specs:
       Portfolio Validations: uniqueness of name, presence of strategy and name
       Fund Validations: uniqueness of symbol, numericality of quantity and cost
 
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+      investments/popular_investments
 
 - [x] Include signup (how e.g. Devise)
       UsersController contains a Signup form that creates a user at new_user_path
@@ -31,7 +32,8 @@ Specs:
       post '/signin' => 'sessions#create'
       get '/signout' => 'sessions#destroy'
 
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+      OmniAuth Google signup/login
 
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
       users/1/funds
@@ -39,11 +41,11 @@ Specs:
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
       users/1/funds/new
 
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
-
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+      Validation errors displayed for forms.
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate

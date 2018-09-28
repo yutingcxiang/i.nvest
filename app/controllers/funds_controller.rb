@@ -1,4 +1,6 @@
 class FundsController < ApplicationController
+  before_action :require_signin
+  skip_before_action :require_signin, only: [:index]
 
   def index
     @funds = Fund.all

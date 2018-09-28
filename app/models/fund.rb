@@ -14,5 +14,4 @@ class Fund < ApplicationRecord
      self.investments << investment
    end
  end
-
 end

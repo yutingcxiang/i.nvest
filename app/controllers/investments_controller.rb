@@ -1,4 +1,7 @@
 class InvestmentsController < ApplicationController
+  before_action :require_signin
+  skip_before_action :require_signin, only: [:index]
+
   def index
     @investments = Investment.all
   end
@@ -12,10 +15,8 @@ class InvestmentsController < ApplicationController
     redirect_to investments_path
   end
 
-  def destroy
-    @investment = Investment.find_by(id: params[:id])
-    @investment.destroy
-    redirect_to '/'
+  def show
+    @invest = Investment.find_by(id: params[:id])
   end
 
   private
