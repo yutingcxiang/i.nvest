@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :investments, only: [:index, :new, :create, :show]
+
+  get '/investments/top_investments' => 'investments#top_investments'
 end

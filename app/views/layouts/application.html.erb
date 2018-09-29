@@ -14,6 +14,15 @@
   </body>
 
   <footer>
-
+    <% if logged_in? %>
+      <div class="navbar">
+        <%= link_to "My Profile", user_path(current_user) %>
+        <%= link_to "My Funds", user_fund_path(current_user) %>
+        <%= link_to "New Fund", new_user_fund_path(current_user) %>
+        <%= link_to "Explore All Investments", investment_path %>
+        <%= link_to "Top Investments", investment_path %>
+        <%= link_to "Sign Out", signout_path %>
+      </div>
+    <%end%>
   </footer>
 </html>

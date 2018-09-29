@@ -19,6 +19,10 @@ class InvestmentsController < ApplicationController
     @invest = Investment.find_by(id: params[:id])
   end
 
+  def top_investments
+    
+  end
+
   private
 
   def investment_params
