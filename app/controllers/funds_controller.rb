@@ -23,10 +23,16 @@ class FundsController < ApplicationController
 
   def show
     if params[:user_id]
-      @funds = User.find(params[:user_id]).funds
+      @fund = User.find(params[:user_id]).funds
     else
       @funds = Fund.all
     end
+  end
+
+  def destroy
+    @fund = User.find(params[:user_id]).funds
+    @fund.destroy
+    redirect_to user_path(@user)
   end
 
   private
