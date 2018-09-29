@@ -1,0 +1,18 @@
+<h1><%= @investment.symbol %> </h1>
+
+<h4>Funds With This Investment:</h4>
+<ul>
+<% @investment.funds.each do |fund| %>
+  <li><%= investment.symbol %></li>
+  <li><%= link_to "#{fund.fund_name}", user_fund_path(investment.fund.user, fund) %></li>
+<% end %>
+</ul>
+
+<br>
+
+<h4>Users With This Investment:</h4>
+<ul>
+<% @investment.users.each do |user| %>
+  <li><%= link_to "#{user.username}", user_path(user) %></li>
+<% end %>
+</ul>

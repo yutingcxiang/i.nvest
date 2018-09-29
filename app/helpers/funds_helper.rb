@@ -4,5 +4,4 @@ module FundsHelper
       true
     end
   end
-
 end

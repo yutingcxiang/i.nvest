@@ -4,9 +4,6 @@ class InvestmentsController < ApplicationController
 
   def index
     @investments = Investment.all
-  end
-
-  def new
     @investment = Investment.new
   end
 
@@ -16,11 +13,11 @@ class InvestmentsController < ApplicationController
   end
 
   def show
-    @invest = Investment.find_by(id: params[:id])
+    @investment = Investment.find_by(id: params[:id])
   end
 
   def top_investments
-    
+    @top_investments = Investment.all
   end
 
   private

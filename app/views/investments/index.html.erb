@@ -1,9 +1,14 @@
-<h1>Explore All investments:</h1>
+<h1>Explore All Investments:</h1>
 
 <ul>
 <% @investments.each do |investment| %>
   <li><%= investment.symbol %></li>
 <% end %>
 </ul>
+
+<br>
+<h4>Add an Investment:</h1>
+
+<%=render partial: 'form', locals: {investment: @investment}%>
 
 <br>
