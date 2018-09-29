@@ -14,7 +14,7 @@
   </body>
 
   <footer>
-    <% if logged_in? %>
+    <% if sign_in? %>
       <div class="navbar">
         <%= link_to "My Profile", user_path(current_user) %>
         <%= link_to "New Fund", new_user_fund_path(current_user) %>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :funds, only: [:index]
-  resources :investments, only: [:index, :new, :create, :show]
+  resources :investments, only: [:index, :create]
 
   get '/investments/top_investments' => 'investments#top_investments', as: 'top_investments'
 end

@@ -3,17 +3,17 @@ class InvestmentsController < ApplicationController
   skip_before_action :require_signin, only: [:index]
 
   def index
-    @investments = Investment.all
-    @investment = Investment.new
+    if params[:symbol]
+      @investment = Investment.where('symbol LIKE ?', "%#{params[:search]}%")
+    else
+      @investments = Investment.all
+    end
   end
 
   def create
-    @investment = Investment.create(investment_params)
+    @investment = Investment.new(investment_params)
+    @investment.save
     redirect_to investments_path
-  end
-
-  def show
-    @investment = Investment.find_by(id: params[:id])
   end
 
   def top_investments
@@ -23,6 +23,6 @@ class InvestmentsController < ApplicationController
   private
 
   def investment_params
-    params.require(:investment).permit(:symbol, :user_id, :fund_id)
+    params.require(:investment).permit(:symbol, :user_id, :fund_id, :search)
   end
 end

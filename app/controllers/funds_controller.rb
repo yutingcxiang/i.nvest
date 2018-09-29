@@ -22,10 +22,20 @@ class FundsController < ApplicationController
   end
 
   def show
-    if params[:user_id]
-      @fund = User.find(params[:user_id]).funds
+    @fund = Fund.find_by(id: params[:id])
+  end
+
+  def edit
+    @fund = Fund.find_by(id: params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @fund = @user.funds.update(fund_params)
+    if @fund.save
+      redirect_to user_path(@user)
     else
-      @funds = Fund.all
+      redirect_to edit_user_fund_path(@user, @fund)
     end
   end
 
@@ -38,7 +48,7 @@ class FundsController < ApplicationController
   private
 
   def fund_params
-    params.require(:fund).permit(:fund_name, :industry, :strategy,
+    params.require(:fund).permit(:name, :industry, :strategy,
       investment_ids:[], new_investment: [:symbol, :user_id])
   end
 end
