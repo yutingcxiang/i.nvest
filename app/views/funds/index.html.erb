@@ -1,10 +1,8 @@
 <h1>All Funds:</h1>
 
-<div>
+<ul>
 <% @funds.each do |fund| %>
-  <p>Name: <%= fund.name %></p>
-  <p>Industry: <%= fund.industry %></p>
-  <p>Strategy: <%= fund.strategy %></p>
-  <p><%= button_to "More Info", user_fund_path(fund.users.first, fund) %></p><br><br>
+  <li><%= fund.symbol %></li>
 <% end %>
-</div>
+</ul>
+<br>

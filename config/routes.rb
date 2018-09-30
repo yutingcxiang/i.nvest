@@ -9,11 +9,9 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
 
   resources :users, only: [:index, :new, :create, :show] do
-    resources :funds, only: [:new, :create, :show, :edit, :update, :destroy]
+    resources :funds
+    resources :investments
   end
 
-  resources :funds, only: [:index]
-  resources :investments, only: [:index, :create]
-
-  get '/investments/top_investments' => 'investments#top_investments', as: 'top_investments'
+  get '/funds/top_funds' => 'funds#top_funds', as: 'top_funds'
 end

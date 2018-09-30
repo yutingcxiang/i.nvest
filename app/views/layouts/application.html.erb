@@ -14,13 +14,14 @@
   </body>
 
   <footer>
+    <br>
     <% if sign_in? %>
       <div class="navbar">
         <%= link_to "My Profile", user_path(current_user) %>
-        <%= link_to "New Fund", new_user_fund_path(current_user) %>
-        <%= link_to "See All Funds", funds_path %>
-        <%= link_to "Explore All Investments", investments_path %>
-        <%= link_to "Top Investments", top_investments_path %>
+        <%= link_to "All Users", users_path %>
+        <%= link_to "New Investment", new_user_investment_path(current_user) %>
+        <%= link_to "See All Funds", user_funds_path(current_user) %>
+        <%= link_to "Top Funds", top_funds_path %>
         <%= link_to "Sign Out", signout_path %>
       </div>
     <%end%>

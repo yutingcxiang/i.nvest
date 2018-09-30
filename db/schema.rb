@@ -13,15 +13,15 @@
 ActiveRecord::Schema.define(version: 2018_09_26_075440) do
 
   create_table "funds", force: :cascade do |t|
-    t.string "name"
-    t.string "industry"
-    t.string "strategy"
+    t.string "symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "investments", force: :cascade do |t|
-    t.string "symbol"
+    t.boolean "action"
+    t.integer "quantity"
+    t.decimal "price"
     t.integer "user_id"
     t.integer "fund_id"
     t.datetime "created_at", null: false

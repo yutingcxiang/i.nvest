@@ -1,20 +1,21 @@
 <h1>Hello, <%= @user.name %>!</h1>
 
 <h3>Your Funds:</h3>
+<ul>
+  <% @user.funds.uniq.each do |fund| %>
+    <li><%= fund.symbol %></li>
+  <% end %>
+</ul>
+<br>
+
+<h3>Your Investments:</h3>
 <div>
-  <% @user.funds.order(created_at: :desc).each do |fund| %>
-    <p>Name: <%= fund.name%></p>
-    <p>Industry: <%= fund.industry%></p>
-    <p>Strategy: <%= fund.strategy%></p>
-    <p>Investments:</p>
-      <ul>
-      <% if has_investments(fund) %>
-        <% fund.investments.each do |investment| %>
-          <li><%= investment.symbol %></li>
-        <% end %>
-      <% end %>
-      </ul>
-      <br>
+  <% @user.investments.order(created_at: :desc).each do |investment| %>
+    <p>Fund: <%= investment.fund.symbol%></p>
+    <p>Quantity: <%= investment.quantity%></p>
+    <p>Price: <%= investment.price%></p>
+    <p>Date Created: <%= investment.created_at %></p>
+    <br>
     <% end %>
 </div>
 

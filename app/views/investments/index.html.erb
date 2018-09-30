@@ -2,16 +2,12 @@
 
 <ul>
 <% @investments.each do |investment| %>
-  <li><%= investment.symbol %></li>
+  <li><%= investment.fund.symbol %></li>
+  <li><%= investment.quantity %></li>
+  <li><%= investment.price %></li>
+  <li><%= investment.user.username %></li>
+  <li><%= investment.created_at %></li>
 <% end %>
 </ul>
 
-<br>
-
-<h4>Find an Investment:</h1>
-  <%=form_tag(investments_path, method: :get) do |f|%>
-    <%= text_field_tag :search, params[:search] %><br><br>
-    <%= submit_tag "Search" %><br>
-
-  <%end%>
 <br>
