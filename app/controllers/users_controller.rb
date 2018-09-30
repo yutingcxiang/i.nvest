@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :verify_user, only: [:edit, :update]
+  before_action :verify_user, only: [:edit, :update, :show]
 
   def index
     @users = User.all
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      render new_user_path
+      render :new
     end
   end
 
@@ -32,15 +32,17 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
-      flash[:error] = @user.errors.full_messages
-      redirect_to edit_user_path(@user)
+      render :edit
     end
   end
 
   private
 
   def verify_user
-    @user = User.find(params[:id]) if current_user == @user
+    @user = User.find(params[:id])
+    unless current_user == @user
+      redirect_to signin_url, notice: "You are not authorized to edit this account."
+    end
   end
 
   def user_params

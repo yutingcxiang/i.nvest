@@ -1,3 +1,15 @@
+<% if @investment.errors.any? %>
+  <div id="errors">
+    <h4>Error:</h4>
+
+    <ul>
+    <% @investment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%=form_for([user, investment]) do |f|%>
 
   <%=f.hidden_field :user_id, :value => @user.id %>

@@ -1,6 +1,5 @@
 class InvestmentsController < ApplicationController
   before_action :require_signin
-  skip_before_action :require_signin, only: [:index]
 
   def index
     @investments = Investment.all
@@ -19,10 +18,6 @@ class InvestmentsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def show
-    @investment = Investment.find_by(id: params[:id])
   end
 
   def destroy
