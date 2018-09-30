@@ -26,9 +26,9 @@ class InvestmentsController < ApplicationController
   end
 
   def destroy
-    @investment = Investment.find(params[fund_params])
+    @investment = Investment.find_by(id: params[:id])
     @investment.destroy
-    redirect_to user_path(@user)
+    redirect_to user_path(current_user)
   end
 
   private
