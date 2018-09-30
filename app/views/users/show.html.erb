@@ -13,14 +13,21 @@
 <br>
 
 <h3>Your Investments:</h3>
-<div>
+<table style="width:100%">
+  <tr>
+    <th align="left">Fund:</th>
+    <th align="left">Quantity:</th>
+    <th align="left">Price:</th>
+    <th align="left">Date Created:</th>
+  </tr>
   <% @user.investments.order(created_at: :desc).each do |investment| %>
-    <p>Fund: <%= investment.fund.symbol%></p>
-    <p>Quantity: <%= investment.quantity%></p>
-    <p>Price: <%= investment.price%></p>
-    <p>Date Created: <%= investment.created_at.strftime("%m/%d/%Y") %></p>
-    <br>
+    <tr>
+      <td><%= investment.fund.symbol%></td>
+      <td><%= investment.quantity%></td>
+      <td><%= investment.price%></td>
+      <td><%= investment.created_at.strftime("%m/%d/%Y") %></td>
+    <tr>
     <% end %>
-</div>
+</table>
 
 <br>
