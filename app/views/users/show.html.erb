@@ -1,4 +1,8 @@
-<h1>Hello, <%= @user.name %>!</h1>
+<% if @user == current_user %>
+  <h1>Hello, <%= @user.name %>!</h1>
+  <% else %>
+  <h1><%= @user.name %></h1>
+<% end %>
 
 <h3>Your Funds:</h3>
 <ul>
@@ -14,7 +18,7 @@
     <p>Fund: <%= investment.fund.symbol%></p>
     <p>Quantity: <%= investment.quantity%></p>
     <p>Price: <%= investment.price%></p>
-    <p>Date Created: <%= investment.created_at %></p>
+    <p>Date Created: <%= investment.created_at.strftime("%m/%d/%Y") %></p>
     <br>
     <% end %>
 </div>
