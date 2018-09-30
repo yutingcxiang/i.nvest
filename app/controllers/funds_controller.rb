@@ -7,7 +7,7 @@ class FundsController < ApplicationController
   end
 
   def top_funds
-    @top_funds = Fund.all
+    @top_funds = Fund.joins(:users).group(:fund_id).having("count(user_id) > 1")
   end
 
   private
