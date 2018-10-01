@@ -10,7 +10,6 @@ class Investment < ApplicationRecord
     if !new_fund[:symbol].empty?
       fund = Fund.find_or_create_by(new_fund)
       self.fund = fund
-      fund.user = current_user
     end
   end
 end

@@ -1,6 +1,6 @@
 # i.nvest
 
-i.nvest is designed for investors to create and share their custom trading portfolios. Signup through the site or using your Google account to begin creating your own portfolios or to view other portolios.
+i.nvest is designed for investors to create and share their investments and funds. Sign up through the site or using your Google account to begin creating your own investments and to view the top funds chosen by users.
 
 ## Contributing
 
