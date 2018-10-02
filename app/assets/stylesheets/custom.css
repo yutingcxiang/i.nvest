@@ -1,17 +1,17 @@
 body {
   font-family: Helvetica;
   background: #454545;
-  color: white;
+  color: #f7f7f7;
 }
 
-/* .center-screen{
+.center-screen{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 80vh;
-} */
+}
 
 .center-horizontal{
   display: flex;
@@ -19,6 +19,12 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.block {
+  background-color: #f7f7f7;
+  color: #454545;
+  border: #454545;
 }
 
 .field-size {
@@ -31,8 +37,8 @@ body {
 }
 
 .button {
-    background-color: #white;
-    border: 1px solid white;
+    background-color: #f7f7f7;
+    border: 1px solid #454545;
     color: #454545;
     padding: 4px 12px;
     text-align: center;
