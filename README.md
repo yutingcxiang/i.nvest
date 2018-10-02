@@ -1,6 +1,8 @@
 ## i.nvest
 
-i.nvest is designed for investors to create and share their investments and funds. Sign up through the site or using your Google account to begin creating your own investments and to view the top funds chosen by users.
+Create and share your i.nvestments.
+
+Sign up through the site or using your Google account to begin creating your own investments and to view the top funds chosen by users.
 
 ## Installation
 
@@ -25,7 +27,7 @@ Boot up the server:
 Enter the url in your browser:
 
     $ http://localhost:3000/
-    
+
 
 ## Contributing
 
