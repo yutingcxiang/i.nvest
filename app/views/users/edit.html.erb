@@ -2,6 +2,7 @@
   <h4><%= flash[:notice] %></h4>
 </div>
 
-<h1>Update Info For <%=@user.name%></h1>
-
-<%=render partial: 'form', locals: {user: @user}%>
+<div class="center-horizontal">
+  <h1>Update Info For <%=@user.name%></h1>
+  <%=render partial: 'form', locals: {user: @user}%>
+</div>

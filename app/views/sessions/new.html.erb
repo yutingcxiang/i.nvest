@@ -2,15 +2,21 @@
   <h4><%= flash[:notice] %></h4>
 </div>
 
+<div class="center-horizontal">
+  <h1>Sign In</h1>
 
-<h1>Sign In:</h1>
+  <%= form_tag('/signin', :id => 'login') do %>
+    <%= label_tag :username, 'Username: ' %><br>
+    <%= text_field_tag :username, "", class: 'field-size' %><br>
+    <br>
+    <%= label_tag :name, 'Password: ' %><br>
+    <%= password_field_tag :password, "", class: 'field-size' %><br>
+    <br>
+    <%= submit_tag "Log In", class: 'button' %>
+    <%end%>
 
-<%= form_tag('/signin') do %>
-  <%= label_tag :username, 'Username:' %>
-  <%= text_field_tag :username %><br>
+    <br><br>
 
-  <%= label_tag :name, 'Password:' %>
-  <%= password_field_tag :password %><br>
-  <br>
-  <%= submit_tag "Sign In" %>
-<%end%>
+    <h1>Sign In With Google</h1>
+    <%= button_to "Google Log in", "/auth/google_oauth2", id: "sign_in", method: :get, :class => "button" %>
+</div>

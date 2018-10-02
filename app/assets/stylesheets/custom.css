@@ -1,0 +1,43 @@
+body {
+  font-family: Helvetica;
+  background: #454545;
+  color: white;
+}
+
+/* .center-screen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+} */
+
+.center-horizontal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.field-size {
+  width: 160px
+}
+
+#login {
+  font-family: Helvetica;
+  size: 12px
+}
+
+.button {
+    background-color: #white;
+    border: 1px solid white;
+    color: #454545;
+    padding: 4px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 4px;
+}
