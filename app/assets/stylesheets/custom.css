@@ -31,29 +31,34 @@ body {
   width: 160px
 }
 
-#login {
-  font-family: Helvetica;
-  size: 12px
+.button {
+  background-color: #f7f7f7;
+  border: 1px solid #454545;
+  color: #454545;
+  padding: 4px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 12px;
+  border-radius: 4px;
+  width: auto;
 }
 
-.button {
-    background-color: #f7f7f7;
-    border: 1px solid #454545;
-    color: #454545;
-    padding: 4px 12px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    border-radius: 4px;
+.float-button {
+  padding: 8px 20px;
+  float: left;
+  width: 14.25%;
+  font-size: 30px;
+  border-radius: 0px;
 }
+
 
 ul {
   padding:0;
   margin:0;
   font-family: Helvetica;
   size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 
 a {
@@ -72,4 +77,15 @@ table {
 
 th, td {
   border-bottom: 1px solid #454545;
+}
+
+#login {
+  font-family: Helvetica;
+  size: 12px
+}
+
+#navbar {
+  color: #f7f7f7;
+  background-color: #f7f7f7;
+  text-align: center;
 }

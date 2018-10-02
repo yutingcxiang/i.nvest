@@ -1,17 +1,9 @@
 <div class="center-horizontal block">
   <% if @user == current_user %>
-    <h1>Hello, <%= @user.name %>!</h1>
+    <h1>Hello <%= @user.name %>!</h1>
   <% else %>
     <h1><%= @user.name %></h1>
   <% end %>
-
-  <h3>Funds</h3>
-    <ul>
-      <% @user.funds.uniq.each do |fund| %>
-      <li><%= fund.symbol %></li>
-      <% end %>
-    </ul>
-  <br>
 
   <h3>Investments</h3>
     <table style="width:100%">
@@ -36,5 +28,13 @@
       </tr>
       <% end %>
     </table>
-    <br>
+    <br><br>
+
+<h3>Funds</h3>
+  <ul>
+    <% @user.funds.uniq.each do |fund| %>
+    <li><%= fund.symbol %></li>
+    <% end %>
+  </ul>
+<br><br>
 </div>
