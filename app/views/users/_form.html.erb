@@ -10,7 +10,6 @@
   </div>
 <% end %>
 
-<div>
 <%= form_for @user do |f|%>
   <%= f.label :email, "Email: " %><br>
   <%= f.email_field :email, class: 'field-size' %><br>
@@ -26,4 +25,4 @@
   <br>
   <%= submit_tag "Submit", class: 'button' %>
 <%end%>
-<div>
+<br><br>

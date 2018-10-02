@@ -10,7 +10,6 @@
   </div>
 <% end %>
 
-<div>
 <%=form_for([user, investment]) do |f|%>
 
   <%=f.hidden_field :user_id, :value => @user.id %>
@@ -32,4 +31,4 @@
 
   <%=f.submit %><br>
 <%end%>
-<div>
+<br><br>
