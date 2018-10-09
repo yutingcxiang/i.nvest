@@ -1,6 +1,5 @@
 <div class="center-horizontal block">
-<h1>Newest Investments:</h1>
-
+<h1>Most Recent Investments:</h1>
 <table style="width:100%">
   <tr>
     <th align="left">Fund:</th>
@@ -9,7 +8,7 @@
     <th align="left">Created By:</th>
     <th align="left">Date Created:</th>
   </tr>
-  <% @newest_investments.each do |investment| %>
+  <% @latest_investments.each do |investment| %>
     <tr>
       <td><%= investment.fund.symbol%></td>
       <td><%= investment.quantity%></td>

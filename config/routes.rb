@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   end
 
   get '/funds/top_funds' => 'funds#top_funds', as: 'top_funds'
-  get '/investments/newest_investments' => 'investments#newest', as: 'newest'
+  get '/investments/latest_investments' => 'investments#latest', as: 'latest'
 end

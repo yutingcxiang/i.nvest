@@ -26,8 +26,8 @@ class InvestmentsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def newest
-    @newest_investments = Investment.newest
+  def latest
+    @latest_investments = Investment.latest
   end
 
   private

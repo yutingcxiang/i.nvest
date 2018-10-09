@@ -6,7 +6,7 @@ class Investment < ApplicationRecord
   validates :price, presence: true, numericality: {greater_than: 0}
   validates :fund, :associated => true, :presence => true
 
-  scope :newest, -> { order(created_at: :desc).limit(5)}
+  scope :latest, -> { order(created_at: :desc).limit(5)}
 
   def new_fund=(new_fund)
     if !new_fund[:symbol].empty?
