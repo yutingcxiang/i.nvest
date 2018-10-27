@@ -1,6 +1,6 @@
 ## i.nvest
 
-Create and share your i.nvestments.
+Create and share your investments.
 
 Sign up through the site or using your Google account to begin creating your own investments and to view the top funds chosen by users.
 
