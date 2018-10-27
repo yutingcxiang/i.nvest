@@ -1,6 +1,6 @@
 ## i.nvest
 
-A rails-based platform for investors to share their investments. Track and share your funds and trades in one place or view other portfolios and top trades for your next investment idea.
+A platform for investors to share their investments. Track and share your funds and trades in one place or view other portfolios and top trades for your next investment idea.
 
 Sign up through the site or using your Google account to begin.
 
